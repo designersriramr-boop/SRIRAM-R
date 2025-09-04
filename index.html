@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRIRAM R - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-700">SRIRAM R</h1>
+      <nav class="space-x-4 text-sm font-medium">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#skills" class="hover:text-blue-600">Skills</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 p-8">
+    <div>
+      <h2 class="text-4xl font-bold mb-4">Entry-Level Mechanical Engineer</h2>
+      <p class="text-lg mb-6 max-w-xl">
+        Passionate about mechanical design and product development with strong skills in SolidWorks, GD&T, and basic FEA.
+        Recently graduated and eager to contribute to innovative projects at growing companies.
+      </p>
+      <a href="resume.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-5xl mx-auto p-8">
+    <h3 class="text-2xl font-semibold mb-4">About Me</h3>
+    <p class="leading-relaxed text-gray-700">
+      I am SRIRAM R, a recent Mechanical Engineering graduate with hands-on experience in CAD design, component fabrication,
+      and product testing. My goal is to apply SolidWorks and mechanical fundamentals to help design and build reliable products.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-white p-8">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-6">Skills</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">SolidWorks (Parts, Assemblies, Drawings)</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">GD&T and Tolerance Stack-up</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">Sheet Metal & Weldments</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">Basic FEA Analysis</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">3D Printing & Prototyping</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">DFM (Design for Manufacturing)</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">AutoCAD Basics</div>
+        <div class="bg-gray-100 p-4 text-center text-sm font-medium rounded">Team Collaboration</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto p-8">
+    <h3 class="text-2xl font-semibold mb-6">Projects & Work Samples</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="bg-white rounded-xl shadow p-4">
+        <img src="images/part.png" alt="Part Drawing" class="rounded-lg mb-3 cursor-pointer" onclick="openLightbox(this)">
+        <h4 class="font-bold text-lg">Part Modeling</h4>
+        <p class="text-sm text-gray-600">3D parametric modeling of mechanical components in SolidWorks.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-4">
+        <img src="images/sheetmetal.png" alt="Sheet Metal" class="rounded-lg mb-3 cursor-pointer" onclick="openLightbox(this)">
+        <h4 class="font-bold text-lg">Sheet Metal Design</h4>
+        <p class="text-sm text-gray-600">Designed sheet metal parts with bend allowances and flat patterns.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-4">
+        <img src="images/surface.png" alt="Surface Modeling" class="rounded-lg mb-3 cursor-pointer" onclick="openLightbox(this)">
+        <h4 class="font-bold text-lg">Surface Modeling</h4>
+        <p class="text-sm text-gray-600">Complex surface designs using loft, sweep, and boundary features.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-4">
+        <img src="images/assembly.png" alt="Assembly" class="rounded-lg mb-3 cursor-pointer" onclick="openLightbox(this)">
+        <h4 class="font-bold text-lg">Assembly Design</h4>
+        <p class="text-sm text-gray-600">Assembled multiple components with proper mates and motion study.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-4">
+        <img src="images/drafting.png" alt="Drafting" class="rounded-lg mb-3 cursor-pointer" onclick="openLightbox(this)">
+        <h4 class="font-bold text-lg">Engineering Drafting</h4>
+        <p class="text-sm text-gray-600">2D drawings with GD&T, BOM tables, and detail annotations.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    <span class="absolute top-5 right-8 text-white text-4xl cursor-pointer" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" class="max-h-[90%] max-w-[90%] rounded-lg shadow-lg">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById("lightbox-img").src = img.src;
+      document.getElementById("lightbox").classList.remove("hidden");
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.add("hidden");
+    }
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-100 p-8">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">Contact Me</h3>
+      <p class="mb-2">📧 Email: <a href="mailto:designersriram.r@gmail.com" class="text-blue-600">designersriram.r@gmail.com</a></p>
+      <p class="mb-2">📞 Phone: 9047431042</p>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/sriram-r-3b0a55381" target="_blank" class="text-blue-600">linkedin.com/in/sriram-r</a></p>
+    </div>
+  </section>
+
+</body>
+</html>
